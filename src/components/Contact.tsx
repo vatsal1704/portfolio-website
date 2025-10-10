@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { Send } from "lucide-react";
+import { Send, Linkedin, Github, Mail } from "lucide-react";
 import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
@@ -19,7 +19,6 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Here you would typically send the form data to your backend
     toast({
       title: "Message Sent!",
       description: "Thank you for reaching out. I'll get back to you soon.",
@@ -33,6 +32,27 @@ const Contact = () => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
+  const socials = [
+    {
+      name: "LinkedIn",
+      icon: Linkedin,
+      url: "https://linkedin.com/in/yourprofile",
+      color: "hover:text-[#0077b5]",
+    },
+    {
+      name: "GitHub",
+      icon: Github,
+      url: "https://github.com/yourusername",
+      color: "hover:text-foreground",
+    },
+    {
+      name: "Email",
+      icon: Mail,
+      url: "mailto:your.email@example.com",
+      color: "hover:text-primary",
+    },
+  ];
+
   return (
     <section id="contact" className="py-20 md:py-32 bg-secondary/30" ref={ref}>
       <div className="container mx-auto px-6">
@@ -40,29 +60,55 @@ const Contact = () => {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6 }}
-          className="text-4xl md:text-5xl font-bold text-center mb-8"
+          className="text-4xl md:text-5xl font-bold text-center mb-16"
         >
           Get In Touch
         </motion.h2>
 
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.2 }}
-          className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto"
-        >
-          I'm always open to discussing new projects, creative ideas, or
-          opportunities to be part of your visions. Feel free to reach out!
-        </motion.p>
+        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-start">
+          {/* Left side - Socials */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            className="space-y-8"
+          >
+            <div>
+              <h3 className="text-2xl font-semibold mb-4">Connect With Me</h3>
+              <p className="text-muted-foreground mb-8">
+                I'm always open to discussing new projects, creative ideas, or
+                opportunities to be part of your visions.
+              </p>
+            </div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 50 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.6, delay: 0.4 }}
-          className="max-w-2xl mx-auto"
-        >
-          <form onSubmit={handleSubmit} className="space-y-6">
-            <div className="grid md:grid-cols-2 gap-6">
+            <div className="space-y-6">
+              {socials.map((social, index) => (
+                <motion.a
+                  key={social.name}
+                  href={social.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isInView ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.4, delay: 0.4 + index * 0.1 }}
+                  className={`flex items-center gap-4 text-lg group transition-colors ${social.color}`}
+                >
+                  <div className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center group-hover:bg-primary/10 transition-colors">
+                    <social.icon size={24} />
+                  </div>
+                  <span className="font-medium">{social.name}</span>
+                </motion.a>
+              ))}
+            </div>
+          </motion.div>
+
+          {/* Right side - Contact Form */}
+          <motion.div
+            initial={{ opacity: 0, x: 50 }}
+            animate={isInView ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.4 }}
+          >
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label
                   htmlFor="name"
@@ -99,37 +145,37 @@ const Contact = () => {
                   className="bg-background"
                 />
               </div>
-            </div>
 
-            <div>
-              <label
-                htmlFor="message"
-                className="block text-sm font-medium mb-2"
+              <div>
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                >
+                  Message
+                </label>
+                <Textarea
+                  id="message"
+                  name="message"
+                  required
+                  value={formData.message}
+                  onChange={handleChange}
+                  placeholder="Your message here..."
+                  rows={6}
+                  className="bg-background resize-none"
+                />
+              </div>
+
+              <Button
+                type="submit"
+                size="lg"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
               >
-                Message
-              </label>
-              <Textarea
-                id="message"
-                name="message"
-                required
-                value={formData.message}
-                onChange={handleChange}
-                placeholder="Your message here..."
-                rows={6}
-                className="bg-background resize-none"
-              />
-            </div>
-
-            <Button
-              type="submit"
-              size="lg"
-              className="w-full bg-primary text-primary-foreground hover:bg-primary/90"
-            >
-              <Send size={18} className="mr-2" />
-              Send Message
-            </Button>
-          </form>
-        </motion.div>
+                <Send size={18} className="mr-2" />
+                Send Message
+              </Button>
+            </form>
+          </motion.div>
+        </div>
       </div>
     </section>
   );

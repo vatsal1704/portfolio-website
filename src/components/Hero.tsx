@@ -1,5 +1,4 @@
 import { motion } from "framer-motion";
-import { ArrowDown } from "lucide-react";
 import { Button } from "./ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
 
@@ -73,24 +72,6 @@ const Hero = () => {
             </Button>
           </motion.div>
         </motion.div>
-
-        {/* Scroll Indicator */}
-        <motion.a
-          href="#about"
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          transition={{ delay: 1, duration: 0.8 }}
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-        >
-          <motion.div
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 1.5, repeat: Infinity }}
-            className="flex flex-col items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
-          >
-            <span className="text-sm">Scroll Down</span>
-            <ArrowDown size={20} />
-          </motion.div>
-        </motion.a>
       </div>
     </section>
   );
