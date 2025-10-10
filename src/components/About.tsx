@@ -1,19 +1,11 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Github, Linkedin, Twitter, Mail } from "lucide-react";
 import profileImg from "@/assets/profile.jpg";
 
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
-
-  const socialLinks = [
-    { icon: Github, href: "https://github.com", label: "GitHub" },
-    { icon: Linkedin, href: "https://linkedin.com", label: "LinkedIn" },
-    { icon: Twitter, href: "https://twitter.com", label: "Twitter" },
-    { icon: Mail, href: "mailto:hello@example.com", label: "Email" },
-  ];
 
   return (
     <section id="about" className="py-20 md:py-32" ref={ref}>
@@ -63,43 +55,6 @@ const About = () => {
               contributing to open source, or enjoying a good cup of coffee
               while reading about the latest in web development.
             </p>
-
-            <div className="flex flex-wrap gap-3 mb-8">
-              {["React", "TypeScript", "Node.js", "Tailwind CSS", "Next.js"].map(
-                (skill, index) => (
-                  <motion.span
-                    key={skill}
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={isInView ? { opacity: 1, scale: 1 } : {}}
-                    transition={{ duration: 0.4, delay: 0.6 + index * 0.1 }}
-                    className="px-4 py-2 bg-secondary text-secondary-foreground rounded-full text-sm font-medium"
-                  >
-                    {skill}
-                  </motion.span>
-                )
-              )}
-            </div>
-
-            {/* Social Links */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.8 }}
-              className="flex gap-4"
-            >
-              {socialLinks.map((social) => (
-                <a
-                  key={social.label}
-                  href={social.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-muted-foreground hover:bg-primary hover:text-primary-foreground transition-all duration-300 hover:scale-110 shadow-soft"
-                  aria-label={social.label}
-                >
-                  <social.icon size={20} />
-                </a>
-              ))}
-            </motion.div>
           </motion.div>
         </div>
       </div>

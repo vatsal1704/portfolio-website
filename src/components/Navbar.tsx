@@ -11,7 +11,7 @@ const Navbar = () => {
     { name: "About", href: "#about" },
     { name: "Projects", href: "#projects" },
     { name: "Experience", href: "#experience" },
-    { name: "Contact", href: "#contact" },
+    { name: "Resume", href: "/resume.pdf", isExternal: true },
   ];
 
   useEffect(() => {
@@ -48,6 +48,7 @@ const Navbar = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
+                {...(item.isExternal && { target: "_blank", rel: "noopener noreferrer" })}
                 className="text-muted-foreground hover:text-primary transition-colors duration-300 relative group"
                 whileHover={{ y: -2 }}
               >
@@ -78,6 +79,7 @@ const Navbar = () => {
               <motion.a
                 key={item.name}
                 href={item.href}
+                {...(item.isExternal && { target: "_blank", rel: "noopener noreferrer" })}
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: index * 0.1 }}
