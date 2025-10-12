@@ -66,8 +66,9 @@ const Projects = () => {
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.6, delay: index * 0.2 }}
+              whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
             >
-              <Card className="group overflow-hidden bg-card hover:shadow-hover transition-all duration-300 h-full">
+              <Card className="group overflow-hidden bg-card hover:shadow-hover transition-all duration-400 h-full cursor-pointer">
                 <div className="relative overflow-hidden">
                   <img
                     src={project.image}
@@ -121,6 +122,25 @@ const Projects = () => {
             </motion.div>
           ))}
         </div>
+
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.6, delay: 0.8 }}
+          className="flex justify-center mt-12"
+        >
+          <motion.a
+            href="https://github.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors duration-300"
+          >
+            <Github size={20} />
+            View All Projects
+          </motion.a>
+        </motion.div>
       </div>
     </section>
   );

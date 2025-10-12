@@ -59,8 +59,8 @@ const Skills = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8, scale: 1.03 }}
-              className="bg-background rounded-2xl p-6 shadow-soft hover:shadow-hover transition-all duration-300 group cursor-pointer"
+              whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.4, ease: "easeOut" } }}
+              className="bg-background rounded-2xl p-6 shadow-soft hover:shadow-hover transition-all duration-500 ease-out group cursor-pointer"
             >
               <div className="flex items-start gap-4 mb-4">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
