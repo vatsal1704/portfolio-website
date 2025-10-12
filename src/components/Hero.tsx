@@ -68,7 +68,7 @@ const Hero = () => {
               className="border-primary text-primary hover:bg-primary/10"
               asChild
             >
-              <a href="#contact">Get in Touch</a>
+              <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
             </Button>
           </motion.div>
         </motion.div>
