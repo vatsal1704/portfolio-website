@@ -67,16 +67,6 @@ const Hero = () => {
         />
       </div>
 
-      {/* Inline SVG filter to remove white from GIF */}
-      <svg aria-hidden="true" className="absolute w-0 h-0">
-        <filter id="remove-white" colorInterpolationFilters="sRGB">
-          <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  -1 -1 -1 0 1"/>
-          <feComponentTransfer>
-            <feFuncA type="table" tableValues="0 0 0 0 0 0.5 0.7 1 1 1"/>
-          </feComponentTransfer>
-        </filter>
-      </svg>
-
       {/* Content */}
       <div className="container mx-auto px-6 relative z-10">
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
@@ -155,11 +145,11 @@ const Hero = () => {
               }}
               className="relative"
             >
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl" />
               <img
                 src={codingAnimation}
                 alt="Developer coding animation"
-                className="relative z-10 w-full max-w-md mix-blend-multiply opacity-95"
-                style={{ filter: 'url(#remove-white)' }}
+                className="relative z-10 w-full max-w-md mix-blend-multiply opacity-95 drop-shadow-2xl"
               />
             </motion.div>
           </motion.div>
