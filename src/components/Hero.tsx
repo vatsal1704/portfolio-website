@@ -145,11 +145,12 @@ const Hero = () => {
               }}
               className="relative"
             >
-              <div className="absolute inset-0 bg-primary/20 rounded-full blur-2xl" />
+              <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl" />
               <img
                 src={codingAnimation}
                 alt="Developer coding animation"
-                className="relative z-10 w-full max-w-md drop-shadow-2xl"
+                className="relative z-10 w-full max-w-md mix-blend-screen opacity-90"
+                style={{ filter: 'drop-shadow(0 10px 30px rgba(0,0,0,0.3))' }}
               />
             </motion.div>
           </motion.div>
