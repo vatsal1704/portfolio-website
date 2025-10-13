@@ -1,8 +1,32 @@
 import { motion } from "framer-motion";
 import { Button } from "./ui/button";
 import heroBg from "@/assets/hero-bg.jpg";
+import { useTypewriter } from "@/hooks/useTypewriter";
+import { useState, useEffect } from "react";
 
 const Hero = () => {
+  const roles = [
+    "Full-Stack Developer",
+    "Web Developer",
+    "Computer Science Engineer",
+    "AI Engineer",
+    "Data Analyst",
+  ];
+  
+  const typedText = useTypewriter(roles);
+  const [greeting, setGreeting] = useState("");
+
+  useEffect(() => {
+    const hour = new Date().getHours();
+    if (hour < 12) {
+      setGreeting("Good Morning");
+    } else if (hour < 18) {
+      setGreeting("Good Afternoon");
+    } else {
+      setGreeting("Good Evening");
+    }
+  }, []);
+
   return (
     <section
       id="home"
@@ -30,7 +54,7 @@ const Hero = () => {
             transition={{ delay: 0.2, duration: 0.8 }}
             className="text-5xl md:text-7xl font-bold mb-6"
           >
-            Hi, I'm{" "}
+            {greeting}, I'm{" "}
             <span className="bg-gradient-primary bg-clip-text text-transparent">
               Your Name
             </span>
@@ -44,7 +68,8 @@ const Hero = () => {
           >
             A passionate{" "}
             <span className="text-primary font-medium">
-              Full-Stack Developer
+              {typedText}
+              <span className="animate-pulse">|</span>
             </span>{" "}
             crafting beautiful digital experiences
           </motion.p>
