@@ -43,7 +43,7 @@ const Contact = () => {
       name: "GitHub",
       icon: Github,
       url: "https://github.com/yourusername",
-      color: "hover:text-foreground",
+      color: "hover:text-primary",
     },
     {
       name: "Email",

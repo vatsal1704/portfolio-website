@@ -2,6 +2,41 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { Code2, Database, Palette, Server, Smartphone, Globe } from "lucide-react";
+import { useDirectionalShadow } from "@/hooks/useDirectionalShadow";
+
+const SkillCard = ({ skill, index, isInView }: any) => {
+  const { shadowStyle, elementRef } = useDirectionalShadow();
+  
+  return (
+    <motion.div
+      ref={elementRef}
+      key={skill.name}
+      initial={{ opacity: 0, y: 30 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.4, ease: "easeOut" } }}
+      style={shadowStyle}
+      className="bg-background rounded-2xl p-6 shadow-soft transition-all duration-300 ease-out group cursor-pointer"
+    >
+      <div className="flex items-start gap-4 mb-4">
+        <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
+          <skill.icon size={24} />
+        </div>
+        <h3 className="text-xl font-semibold mt-2">{skill.name}</h3>
+      </div>
+      <div className="flex flex-wrap gap-2">
+        {skill.technologies.map((tech) => (
+          <span
+            key={tech}
+            className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
+          >
+            {tech}
+          </span>
+        ))}
+      </div>
+    </motion.div>
+  );
+};
 
 const Skills = () => {
   const ref = useRef(null);
@@ -54,31 +89,7 @@ const Skills = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {skills.map((skill, index) => (
-            <motion.div
-              key={skill.name}
-              initial={{ opacity: 0, y: 30 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: index * 0.1 }}
-              whileHover={{ y: -8, scale: 1.03, transition: { duration: 0.4, ease: "easeOut" } }}
-              className="bg-background rounded-2xl p-6 shadow-soft hover:shadow-hover transition-all duration-500 ease-out group cursor-pointer"
-            >
-              <div className="flex items-start gap-4 mb-4">
-                <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all duration-300">
-                  <skill.icon size={24} />
-                </div>
-                <h3 className="text-xl font-semibold mt-2">{skill.name}</h3>
-              </div>
-              <div className="flex flex-wrap gap-2">
-                {skill.technologies.map((tech) => (
-                  <span
-                    key={tech}
-                    className="px-3 py-1 bg-secondary text-secondary-foreground rounded-full text-sm"
-                  >
-                    {tech}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
+            <SkillCard key={skill.name} skill={skill} index={index} isInView={isInView} />
           ))}
         </div>
       </div>

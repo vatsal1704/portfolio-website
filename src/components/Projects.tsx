@@ -3,6 +3,75 @@ import { useInView } from "framer-motion";
 import { useRef } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { Card } from "./ui/card";
+import { useDirectionalShadow } from "@/hooks/useDirectionalShadow";
+
+const ProjectCard = ({ project, index, isInView }: any) => {
+  const { shadowStyle, elementRef } = useDirectionalShadow();
+  
+  return (
+    <motion.div
+      ref={elementRef}
+      key={project.title}
+      initial={{ opacity: 0, y: 50 }}
+      animate={isInView ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.6, delay: index * 0.2 }}
+      whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
+      style={shadowStyle}
+    >
+      <Card className="group overflow-hidden bg-card transition-all duration-300 h-full cursor-pointer">
+        <div className="relative overflow-hidden">
+          <img
+            src={project.image}
+            alt={project.title}
+            className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
+          />
+          <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+        </div>
+
+        <div className="p-6">
+          <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
+            {project.title}
+          </h3>
+          <p className="text-muted-foreground mb-4 leading-relaxed">
+            {project.description}
+          </p>
+
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((tag) => (
+              <span
+                key={tag}
+                className="text-xs px-3 py-1 bg-secondary text-secondary-foreground rounded-full"
+              >
+                {tag}
+              </span>
+            ))}
+          </div>
+
+          <div className="flex gap-4">
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <Github size={18} />
+              Code
+            </a>
+            <a
+              href={project.demo}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
+            >
+              <ExternalLink size={18} />
+              Demo
+            </a>
+          </div>
+        </div>
+      </Card>
+    </motion.div>
+  );
+};
 
 const Projects = () => {
   const ref = useRef(null);
@@ -61,65 +130,7 @@ const Projects = () => {
 
         <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
           {projects.map((project, index) => (
-            <motion.div
-              key={project.title}
-              initial={{ opacity: 0, y: 50 }}
-              animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
-              whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
-            >
-              <Card className="group overflow-hidden bg-card hover:shadow-hover transition-all duration-400 h-full cursor-pointer">
-                <div className="relative overflow-hidden">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-56 object-cover transition-transform duration-500 group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-background/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </div>
-
-                <div className="p-6">
-                  <h3 className="text-2xl font-bold mb-3 group-hover:text-primary transition-colors">
-                    {project.title}
-                  </h3>
-                  <p className="text-muted-foreground mb-4 leading-relaxed">
-                    {project.description}
-                  </p>
-
-                  <div className="flex flex-wrap gap-2 mb-4">
-                    {project.tags.map((tag) => (
-                      <span
-                        key={tag}
-                        className="text-xs px-3 py-1 bg-secondary text-secondary-foreground rounded-full"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
-                  <div className="flex gap-4">
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <Github size={18} />
-                      Code
-                    </a>
-                    <a
-                      href={project.demo}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors"
-                    >
-                      <ExternalLink size={18} />
-                      Demo
-                    </a>
-                  </div>
-                </div>
-              </Card>
-            </motion.div>
+            <ProjectCard key={project.title} project={project} index={index} isInView={isInView} />
           ))}
         </div>
 

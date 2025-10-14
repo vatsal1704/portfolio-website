@@ -4,6 +4,7 @@ import heroBg from "@/assets/hero-bg.jpg";
 import codingAnimation from "@/assets/coding-animation.gif";
 import { useTypewriter } from "@/hooks/useTypewriter";
 import { useState, useEffect } from "react";
+import { useDirectionalShadow } from "@/hooks/useDirectionalShadow";
 
 const Hero = () => {
   const roles = [
@@ -16,6 +17,7 @@ const Hero = () => {
   
   const typedText = useTypewriter(roles);
   const [greeting, setGreeting] = useState("");
+  const { shadowStyle, elementRef } = useDirectionalShadow();
 
   useEffect(() => {
     const hour = new Date().getHours();
@@ -135,6 +137,7 @@ const Hero = () => {
             className="hidden md:flex justify-center items-center"
           >
             <motion.div
+              ref={elementRef}
               animate={{
                 y: [0, -20, 0],
               }}
@@ -143,7 +146,8 @@ const Hero = () => {
                 repeat: Infinity,
                 ease: "easeInOut",
               }}
-              className="relative"
+              style={shadowStyle}
+              className="relative transition-all duration-300"
             >
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl" />
               <img

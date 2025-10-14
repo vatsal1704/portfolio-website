@@ -2,10 +2,12 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
 import profileImg from "@/assets/profile.jpg";
+import { useDirectionalShadow } from "@/hooks/useDirectionalShadow";
 
 const About = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const { shadowStyle, elementRef } = useDirectionalShadow();
 
   return (
     <section id="about" className="py-12 md:py-20" ref={ref}>
@@ -22,12 +24,14 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
           {/* Image Column */}
           <motion.div
+            ref={elementRef}
             initial={{ opacity: 0, x: -50 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
+            style={shadowStyle}
             className="relative"
           >
-            <div className="relative rounded-2xl overflow-hidden shadow-hover">
+            <div className="relative rounded-2xl overflow-hidden transition-all duration-300">
               <img
                 src={profileImg}
                 alt="Profile"
