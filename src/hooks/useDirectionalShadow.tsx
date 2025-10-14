@@ -14,11 +14,11 @@ export const useDirectionalShadow = () => {
       const y = e.clientY - rect.top - rect.height / 2;
       
       // Calculate shadow offset based on mouse position
-      const offsetX = x / 10;
-      const offsetY = y / 10;
+      const offsetX = x / 8;
+      const offsetY = y / 8;
       
       setShadowStyle({
-        boxShadow: `${offsetX}px ${offsetY}px 30px hsl(217 91% 60% / 0.4), 0 0 20px hsl(217 91% 60% / 0.2)`,
+        boxShadow: `${offsetX}px ${offsetY}px 40px hsl(217 91% 60% / 0.3), ${offsetX * 0.5}px ${offsetY * 0.5}px 60px hsl(217 91% 60% / 0.2), 0 0 80px hsl(217 91% 60% / 0.15)`,
       });
     };
 
