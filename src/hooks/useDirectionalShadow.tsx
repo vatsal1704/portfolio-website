@@ -13,17 +13,21 @@ export const useDirectionalShadow = () => {
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
       
-      // Calculate shadow offset based on mouse position
-      const offsetX = x / 8;
-      const offsetY = y / 8;
+      // Calculate shadow offset based on mouse position - more pronounced
+      const offsetX = x / 5;
+      const offsetY = y / 5;
       
+      // Stronger directional shadow
       setShadowStyle({
-        boxShadow: `${offsetX}px ${offsetY}px 40px hsl(217 91% 60% / 0.3), ${offsetX * 0.5}px ${offsetY * 0.5}px 60px hsl(217 91% 60% / 0.2), 0 0 80px hsl(217 91% 60% / 0.15)`,
+        boxShadow: `${offsetX}px ${offsetY}px 25px hsl(217 91% 60% / 0.4), ${offsetX * 1.5}px ${offsetY * 1.5}px 45px hsl(217 91% 60% / 0.25), 0 4px 15px hsl(217 91% 60% / 0.1)`,
+        transition: 'box-shadow 0.15s ease-out',
       });
     };
 
     const handleMouseLeave = () => {
-      setShadowStyle({});
+      setShadowStyle({
+        transition: 'box-shadow 0.3s ease-out',
+      });
     };
 
     element.addEventListener("mousemove", handleMouseMove);
