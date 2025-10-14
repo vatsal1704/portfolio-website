@@ -17,6 +17,7 @@ const ProjectCard = ({ project, index, isInView }: any) => {
       transition={{ duration: 0.6, delay: index * 0.2 }}
       whileHover={{ y: -6, scale: 1.02, transition: { duration: 0.3, ease: "easeOut" } }}
       style={shadowStyle}
+      className="rounded-2xl"
     >
       <Card className="group overflow-hidden bg-card transition-all duration-300 h-full cursor-pointer">
         <div className="relative overflow-hidden">

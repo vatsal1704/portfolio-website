@@ -147,7 +147,7 @@ const Hero = () => {
                 ease: "easeInOut",
               }}
               style={shadowStyle}
-              className="relative transition-all duration-300"
+              className="relative transition-all duration-300 rounded-full"
             >
               <div className="absolute inset-0 bg-primary/20 rounded-full blur-3xl" />
               <img

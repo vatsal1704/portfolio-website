@@ -29,7 +29,7 @@ const About = () => {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             style={shadowStyle}
-            className="relative"
+            className="relative rounded-2xl"
           >
             <div className="relative rounded-2xl overflow-hidden transition-all duration-300">
               <img
