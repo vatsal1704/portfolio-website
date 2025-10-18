@@ -9,39 +9,26 @@ const Experience = () => {
 
   const experiences = [
     {
-      role: "Senior Full-Stack Developer",
-      company: "Tech Innovations Inc.",
-      period: "2022 - Present",
+      role: "Software Engineer",
+      company: "Newgen Softwares",
+      period: "Feb 2023 - Sept 2023",
       description:
-        "Leading development of enterprise web applications using React, Node.js, and cloud technologies. Mentoring junior developers and architecting scalable solutions.",
+        "Collaborated on client-facing web app features, enhancing user experience and satisfaction. Developed responsive front-end interfaces using HTML, CSS, JavaScript.",
       achievements: [
-        "Reduced application load time by 40%",
-        "Led team of 5 developers",
-        "Implemented CI/CD pipeline",
+        "Debugged and resolved software defects, ensuring prompt issue resolution",
+        "Participated in code reviews, maintaining coding standards and efficiency",
+        "Worked on products of Newgen",
       ],
     },
     {
-      role: "Full-Stack Developer",
-      company: "Digital Solutions Co.",
-      period: "2020 - 2022",
+      role: "Marketing Intern",
+      company: "WeSettle",
+      period: "Jun 2020 - Aug 2020",
       description:
-        "Developed and maintained multiple client projects using modern web technologies. Collaborated with designers to create seamless user experiences.",
+        "Contributed to UI/UX enhancements to improve overall user experience and interface design. Assisted in front-end development tasks, ensuring responsive and user-friendly features.",
       achievements: [
-        "Built 15+ client websites",
-        "Improved code quality with testing",
-        "Integrated third-party APIs",
-      ],
-    },
-    {
-      role: "Frontend Developer",
-      company: "Creative Agency",
-      period: "2018 - 2020",
-      description:
-        "Focused on creating responsive and interactive user interfaces. Worked closely with UX designers to implement pixel-perfect designs.",
-      achievements: [
-        "Developed reusable component library",
-        "Enhanced accessibility compliance",
-        "Optimized performance metrics",
+        "Conducted app testing and debugging to identify and resolve usability issues",
+        "Collaborated with the team to support product improvements and feature rollout",
       ],
     },
   ];
