@@ -124,7 +124,7 @@ const Hero = () => {
                 className="border-primary text-primary hover:bg-primary/10"
                 asChild
               >
-                <a href="/resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
+                <a href="https://drive.google.com/file/d/1cYhSDkP1VYDC0t6a5cxEmxGXSjCA7naP/view?usp=drive_link" target="_blank" rel="noopener noreferrer">Resume</a>
               </Button>
             </motion.div>
           </motion.div>
