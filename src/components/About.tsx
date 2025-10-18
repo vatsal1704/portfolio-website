@@ -48,16 +48,19 @@ const About = () => {
             transition={{ duration: 0.6, delay: 0.4 }}
           >
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
-              I'm a passionate developer with a keen eye for design and a love
-              for creating seamless user experiences. With expertise in modern
-              web technologies, I bring ideas to life through clean code and
-              thoughtful design.
+              I'm a B.Tech graduate in Computer Science with a strong foundation in Artificial Intelligence, Machine Learning, and
+              Data Science, aiming to grow as an AI Engineer. Skilled in Python, SQL, EDA, NLP, and predictive modeling, with
+              practical experience in transformer-based architectures, prompt engineering, and retrieval-augmented
+              generation (RAG). Demonstrated success in end-to-end projects and analytics hackathons, showcasing the ability to
+              deliver real-world AI solutions that drive insights and innovation. Complemented by a background in web
+              development and cloud computing, with proven strengths in problem-solving, collaboration, and a passion for
+              continuous learning to stay ahead of industry trends.
             </p>
 
             <p className="text-lg text-muted-foreground mb-6 leading-relaxed">
               When I'm not coding, you can find me exploring new technologies,
               contributing to open source, or enjoying a good cup of coffee
-              while reading about the latest in web development.
+              while reading about the latest in the field of Computer Science.
             </p>
           </motion.div>
         </div>
