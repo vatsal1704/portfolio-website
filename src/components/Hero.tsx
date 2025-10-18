@@ -87,7 +87,7 @@ const Hero = () => {
             >
               {greeting}, I'm{" "}
               <span className="bg-gradient-primary bg-clip-text text-transparent">
-                Your Name
+                VATSAL GAUR
               </span>
             </motion.h1>
 
