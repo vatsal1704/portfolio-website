@@ -1,7 +1,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef } from "react";
-import { Code2, Database, Palette, Server, Smartphone, Globe } from "lucide-react";
+import { Code2, Database, Brain, Server, Code, Globe } from "lucide-react";
 import { useDirectionalShadow } from "@/hooks/useDirectionalShadow";
 
 const SkillCard = ({ skill, index, isInView }: any) => {
@@ -59,14 +59,14 @@ const Skills = () => {
       technologies: ["PostgreSQL", "MongoDB", "Redis", "Supabase"],
     },
     {
-      name: "UI/UX Design",
-      icon: Palette,
-      technologies: ["Figma", "Adobe XD", "Framer", "Responsive Design"],
+      name: "AI/ML",
+      icon: Brain,
+      technologies: ["Python", "TensorFlow", "PyTorch", "NLP", "RAG"],
     },
     {
-      name: "Mobile Development",
-      icon: Smartphone,
-      technologies: ["React Native", "PWA", "Flutter", "iOS/Android"],
+      name: "Programming Languages",
+      icon: Code,
+      technologies: ["Python", "JavaScript", "TypeScript", "SQL", "C++"],
     },
     {
       name: "Web Technologies",
