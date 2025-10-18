@@ -36,19 +36,19 @@ const Contact = () => {
     {
       name: "LinkedIn",
       icon: Linkedin,
-      url: "https://linkedin.com/in/yourprofile",
+      url: "https://www.linkedin.com/in/vatsalgaur",
       color: "hover:text-[#0077b5]",
     },
     {
       name: "GitHub",
       icon: Github,
-      url: "https://github.com/yourusername",
+      url: "https://github.com/vatsal1704",
       color: "hover:text-primary",
     },
     {
       name: "Email",
       icon: Mail,
-      url: "mailto:your.email@example.com",
+      url: "mailto:vatsalgaur2001@gmail.com",
       color: "hover:text-primary",
     },
   ];
