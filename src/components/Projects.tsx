@@ -142,7 +142,7 @@ const Projects = () => {
           className="flex justify-center mt-12"
         >
           <motion.a
-            href="https://github.com"
+            href="https://github.com/vatsal1704?tab=repositories"
             target="_blank"
             rel="noopener noreferrer"
             whileHover={{ scale: 1.05 }}
