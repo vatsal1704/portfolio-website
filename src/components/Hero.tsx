@@ -100,7 +100,7 @@ const Hero = () => {
               A passionate{" "}
               <span className="text-primary font-medium">
                 {typedText}
-                <span className="inline-block w-0.5 h-5 bg-primary ml-1 animate-pulse"></span>
+                <span className="inline-block w-0.5 h-5 bg-primary ml-1 animate-[blink_1s_step-end_infinite]"></span>
               </span>{" "}
               crafting beautiful digital experiences
             </motion.p>

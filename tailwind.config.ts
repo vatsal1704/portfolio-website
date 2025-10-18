@@ -103,6 +103,14 @@ export default {
             transform: "translateY(0)",
           },
         },
+        "blink": {
+          "0%, 49%": {
+            opacity: "1",
+          },
+          "50%, 100%": {
+            opacity: "0",
+          },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
