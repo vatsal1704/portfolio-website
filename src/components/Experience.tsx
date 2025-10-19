@@ -15,9 +15,13 @@ const Experience = () => {
       description:
         "Collaborated on client-facing web app features, enhancing user experience and satisfaction. Developed responsive front-end interfaces using HTML, CSS, JavaScript.",
       achievements: [
-        "Debugged and resolved software defects, ensuring prompt issue resolution",
-        "Participated in code reviews, maintaining coding standards and efficiency",
-        "Worked on products of Newgen",
+
+        "Collaborated with cross-functional teams to build client-facing web application features for Newgen’s low-code digital transformation platform, improving user experience and customer satisfaction.",
+        "Developed responsive front-end interfaces using HTML, CSS and JavaScript, ensuring compatibility across devices and browsers.",
+        "Debugged and resolved software defects in applications built on Newgen’s platform (including components such as intelligent document processing, content-workflow and case-management modules) — helping reduce average incident resolution time.",
+        "Participated in code reviews, enforcing best practices, improving code maintainability and aligning with team coding standards.",
+        "Worked on enterprise products such as OmniScan, OmniDocs, and OmniFlow—focusing on feature enhancements, UI improvements, and performance optimization to support business-critical workflows for global clients."
+
       ],
     },
     {
