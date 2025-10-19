@@ -27,8 +27,9 @@ const Experience = () => {
       description:
         "Contributed to UI/UX enhancements to improve overall user experience and interface design. Assisted in front-end development tasks, ensuring responsive and user-friendly features.",
       achievements: [
-        "Conducted app testing and debugging to identify and resolve usability issues",
-        "Collaborated with the team to support product improvements and feature rollout",
+        "Assisted in UI/UX enhancements for the company’s app, collaborating with design and development teams to improve overall user interface and ensure responsive-design implementation.",
+        "Conducted app testing and usability debugging to identify and resolve user-experience issues, leading to smoother feature roll-outs.",
+        "Worked with product and marketing teams to support process improvements and feature launches, contributing front-end development support for user-friendly features."
       ],
     },
   ];
