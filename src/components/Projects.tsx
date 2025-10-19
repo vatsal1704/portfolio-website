@@ -4,6 +4,10 @@ import { useRef } from "react";
 import { ExternalLink, Github } from "lucide-react";
 import { Card } from "./ui/card";
 import { useDirectionalShadow } from "@/hooks/useDirectionalShadow";
+import resumeAnalyzer from "@/assets/resume-analyzer.jpg";
+import pdfChat from "@/assets/pdf-chat.jpg";
+import netflixClone from "@/assets/netflix-clone.jpg";
+import airlineSentiment from "@/assets/airline-sentiment.jpg";
 
 const ProjectCard = ({ project, index, isInView }: any) => {
   const { shadowStyle, elementRef } = useDirectionalShadow();
@@ -80,40 +84,40 @@ const Projects = () => {
 
   const projects = [
     {
-      title: "E-Commerce Platform",
+      title: "ResumeAnalyser.AI",
       description:
-        "A full-featured online shopping platform with cart, checkout, and payment integration.",
-      tags: ["React", "Node.js", "MongoDB", "Stripe"],
-      github: "https://github.com",
-      demo: "https://example.com",
-      image: "https://images.unsplash.com/photo-1557821552-17105176677c?w=800&h=600&fit=crop",
+        "A GenAI-powered application that intelligently evaluates resumes against job descriptions with ATS scoring.",
+      tags: ["Python", "Streamlit", "Gemini AI", "NLP"],
+      github: "https://github.com/vatsal1704/ResumeAnalyser.AI",
+      demo: "https://match-reusme-ai.streamlit.app/",
+      image: resumeAnalyzer,
     },
     {
-      title: "Task Management App",
+      title: "Chat with Multiple PDFs",
       description:
-        "A collaborative task manager with real-time updates and team features.",
-      tags: ["Next.js", "TypeScript", "Supabase"],
-      github: "https://github.com",
-      demo: "https://example.com",
-      image: "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&h=600&fit=crop",
+        "Upload multiple PDFs and interactively chat with them using Google's Gemini AI for contextual answers.",
+      tags: ["Python", "Streamlit", "Gemini", "LangChain", "FAISS"],
+      github: "https://github.com/vatsal1704/Chat-with-Multiple-PDFs-using-Gemini",
+      demo: "https://github.com/vatsal1704/Chat-with-Multiple-PDFs-using-Gemini",
+      image: pdfChat,
     },
     {
-      title: "Weather Dashboard",
+      title: "Netflix Clone",
       description:
-        "Real-time weather application with forecasts and location-based features.",
-      tags: ["React", "TailwindCSS", "OpenWeather API"],
-      github: "https://github.com",
-      demo: "https://example.com",
-      image: "https://images.unsplash.com/photo-1592210454359-9043f067919b?w=800&h=600&fit=crop",
+        "A Netflix clone app with movie browsing powered by TMDB API, built with React and deployed on Firebase.",
+      tags: ["React", "Firebase", "TMDB API"],
+      github: "https://github.com/vatsal1704/netflix-clone",
+      demo: "https://netflix-clone-c5f32.web.app/",
+      image: netflixClone,
     },
     {
-      title: "Portfolio CMS",
+      title: "Airline Review Sentiment Analysis",
       description:
-        "A headless CMS for managing portfolio content with a modern admin panel.",
-      tags: ["React", "GraphQL", "PostgreSQL"],
-      github: "https://github.com",
-      demo: "https://example.com",
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&h=600&fit=crop",
+        "Analyze airline reviews to determine sentiment using NLP and machine learning techniques.",
+      tags: ["Python", "NLP", "Machine Learning", "Streamlit"],
+      github: "https://github.com/vatsal1704/Airline-Review-Sentiment-Analysis",
+      demo: "https://airline-review-sentiment-analysis.streamlit.app/",
+      image: airlineSentiment,
     },
   ];
 
