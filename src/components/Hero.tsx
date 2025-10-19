@@ -8,10 +8,9 @@ import { useDirectionalShadow } from "@/hooks/useDirectionalShadow";
 
 const Hero = () => {
   const roles = [
-    "Full-Stack Developer",
     "Web Developer",
     "Computer Science Engineer",
-    "AI Engineer",
+    "AI Enthusiast",
     "Data Analyst",
   ];
   
