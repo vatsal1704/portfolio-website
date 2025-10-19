@@ -51,12 +51,12 @@ const Skills = () => {
     {
       name: "Backend Development",
       icon: Server,
-      technologies: ["Node.js", "Express", "REST APIs", "GraphQL"],
+      technologies: ["Node.js", "Express", "REST APIs"],
     },
     {
       name: "Database",
       icon: Database,
-      technologies: ["PostgreSQL", "MongoDB", "Redis", "Supabase"],
+      technologies: ["MongoDB", "MySQL"],
     },
     {
       name: "AI/ML",

@@ -87,7 +87,7 @@ const Projects = () => {
       title: "ResumeAnalyser.AI",
       description:
         "A GenAI-powered application that intelligently evaluates resumes against job descriptions with ATS scoring.",
-      tags: ["Python", "Streamlit", "Gemini AI", "NLP"],
+      tags: ["Python", "Streamlit", "GenAI", "Gemini AI", "NLP"],
       github: "https://github.com/vatsal1704/ResumeAnalyser.AI",
       demo: "https://match-reusme-ai.streamlit.app/",
       image: resumeAnalyzer,
@@ -96,7 +96,7 @@ const Projects = () => {
       title: "Chat with Multiple PDFs",
       description:
         "Upload multiple PDFs and interactively chat with them using Google's Gemini AI for contextual answers.",
-      tags: ["Python", "Streamlit", "Gemini", "LangChain", "FAISS"],
+      tags: ["Python", "Streamlit", "GenAI", "RAG", "LangChain", "FAISS"],
       github: "https://github.com/vatsal1704/Chat-with-Multiple-PDFs-using-Gemini",
       demo: "https://github.com/vatsal1704/Chat-with-Multiple-PDFs-using-Gemini",
       image: pdfChat,
@@ -105,7 +105,7 @@ const Projects = () => {
       title: "Netflix Clone",
       description:
         "A Netflix clone app with movie browsing powered by TMDB API, built with React and deployed on Firebase.",
-      tags: ["React", "Firebase", "TMDB API"],
+      tags: ["React", "HTML", "CSS", "JavaScript", "Firebase", "TMDB API"],
       github: "https://github.com/vatsal1704/netflix-clone",
       demo: "https://netflix-clone-c5f32.web.app/",
       image: netflixClone,
