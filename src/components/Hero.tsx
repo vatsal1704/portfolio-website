@@ -10,7 +10,7 @@ const Hero = () => {
   const roles = [
     "Web Developer",
     "Computer Science Engineer",
-    "AI Enthusiast",
+    "Generative AI Enthusiast",
     "Data Analyst",
   ];
   
@@ -101,7 +101,6 @@ const Hero = () => {
                 {typedText}
                 <span className="inline-block w-0.5 h-5 bg-primary ml-1 animate-[blink_1s_step-end_infinite]"></span>
               </span>{" "}
-              crafting beautiful digital experiences
             </motion.p>
 
             <motion.div
