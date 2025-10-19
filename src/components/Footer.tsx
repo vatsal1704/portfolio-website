@@ -19,7 +19,7 @@ const Footer = () => {
 
           <p className="text-sm text-muted-foreground flex items-center gap-1">
             Made with <Heart size={14} className="text-primary fill-primary" />{" "}
-            using React & Tailwind
+            
           </p>
         </motion.div>
       </div>
